@@ -10,39 +10,15 @@ const findContact = (contacts, contact) =>
  * convert data from firebase database
  */
 const convertDataFromDataBase = data =>
-  Object.keys(data.data).map(key => ({ id: key, ...data.data[key] }));
+  Object.keys(data).map(key => ({ id: key, ...data[key] }));
 
 /**
- * convert data before adding to firebase database
+ * convert data after adding to firebase database
  */
-const convertItemBeforeAddToDataBase = ({ config, data }) => ({
+const convertItemAfterAddingToDataBase = ({ config, data }) => ({
   id: data.name,
   ...JSON.parse(config.data),
 });
-
-/**
- * save to localStorage
- */
-const saveToLocaleStorage = (key, value) => {
-  try {
-    localStorage.setItem(key, JSON.stringify(value));
-  } catch (err) {
-    throw new Error();
-  }
-};
-
-/**
- * get data from localStorage
- */
-const getFromLocaleStorage = key => {
-  try {
-    const items = localStorage.getItem(key);
-
-    return items ? JSON.parse(items) : null;
-  } catch (err) {
-    throw new Error();
-  }
-};
 
 /**
  * check for availability data in state
@@ -60,9 +36,7 @@ const hasStateContact = (state, contact) => {
 
 export {
   findContact,
-  saveToLocaleStorage,
-  getFromLocaleStorage,
   hasStateContact,
   convertDataFromDataBase,
-  convertItemBeforeAddToDataBase,
+  convertItemAfterAddingToDataBase,
 };

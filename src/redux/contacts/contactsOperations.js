@@ -18,7 +18,7 @@ import {
 
 import {
   convertDataFromDataBase,
-  convertItemBeforeAddToDataBase,
+  convertItemAfterAddingToDataBase,
 } from '../../utils/helpers';
 import checkedContactInDataBase from '../../utils/firebaseHelpers';
 
@@ -29,7 +29,7 @@ export const getAllContacts = () => async dispatch => {
   dispatch(getContactsRequest());
 
   try {
-    const data = await getContactsFromDataBase();
+    const { data } = await getContactsFromDataBase();
 
     dispatch(getContactsSuccess(convertDataFromDataBase(data)));
   } catch (error) {
@@ -53,7 +53,7 @@ export const addContact = contact => async dispatch => {
 
     const data = await addContactToDataBase(contact);
 
-    dispatch(addContactSuccess(convertItemBeforeAddToDataBase(data)));
+    dispatch(addContactSuccess(convertItemAfterAddingToDataBase(data)));
   } catch (error) {
     dispatch(addContactError({ error }));
   }

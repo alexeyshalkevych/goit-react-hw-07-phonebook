@@ -1,5 +1,8 @@
 import db from '../firebase_config';
 
+/**
+ * check if exists item in firebase database
+ */
 const checkedItemInDataBase = (path, childName, itemName) =>
   db
     .ref(path)
