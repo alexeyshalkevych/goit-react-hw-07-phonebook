@@ -29,7 +29,6 @@ export const getAllContacts = () => async dispatch => {
   dispatch(getContactsRequest());
 
   try {
-    // const { data } = await getContactsFromDataBase();
     const data = await getContactsFromDataBase();
 
     dispatch(getContactsSuccess(convertDataFromDataBase(data)));

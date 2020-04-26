@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import ContactForm from '../ContactForm/ContactForm';
-import { addContact } from '../../redux/contacts/contactsOperations';
+import { ADD_CONTACT } from '../../redux/actionTypes';
 
-const mapDispatchToProps = {
-  addContact,
-};
+const mapDispatchToProps = dispatch => ({
+  addContact: contact => dispatch({ type: ADD_CONTACT, contact }),
+});
 
 export default connect(null, mapDispatchToProps)(ContactForm);
