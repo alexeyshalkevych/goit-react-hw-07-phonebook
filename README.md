@@ -1,7 +1,7 @@
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
 
-# goit-react-hw-06-phonebook
+# goit-react-hw-07-phonebook
 
 ## Available Scripts
 
