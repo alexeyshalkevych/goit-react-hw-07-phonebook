@@ -29,11 +29,12 @@ export const getAllContacts = () => async dispatch => {
   dispatch(getContactsRequest());
 
   try {
-    const { data } = await getContactsFromDataBase();
+    // const { data } = await getContactsFromDataBase();
+    const data = await getContactsFromDataBase();
 
     dispatch(getContactsSuccess(convertDataFromDataBase(data)));
   } catch (error) {
-    dispatch(getContactsError(error));
+    dispatch(getContactsError({ error }));
   }
 };
 
@@ -55,7 +56,7 @@ export const addContact = contact => async dispatch => {
 
     dispatch(addContactSuccess(convertItemBeforeAddToDataBase(data)));
   } catch (error) {
-    dispatch(addContactError(error));
+    dispatch(addContactError({ error }));
   }
 };
 
@@ -70,6 +71,6 @@ export const deleteContact = id => async dispatch => {
 
     dispatch(deleteContactSuccess(id));
   } catch (error) {
-    dispatch(deleteContactError(error));
+    dispatch(deleteContactError({ error }));
   }
 };

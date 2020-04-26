@@ -5,7 +5,7 @@ export const PhonebookContainer = styled.div`
   max-width: 400px;
   min-width: 310px;
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 30px 5px 0 5px;
 `;
 
 export const PhonebookTitle = styled.h1`

@@ -10,7 +10,7 @@ const findContact = (contacts, contact) =>
  * convert data from firebase database
  */
 const convertDataFromDataBase = data =>
-  Object.keys(data).map(key => ({ id: key, ...data[key] }));
+  Object.keys(data.data).map(key => ({ id: key, ...data.data[key] }));
 
 /**
  * convert data before adding to firebase database

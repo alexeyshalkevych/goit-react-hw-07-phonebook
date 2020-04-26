@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ContactForm from '../Containers/FormContainer';
 import ContactList from '../Containers/ContactListContainer';
 import ContactFilter from '../Containers/ContactFilterContainer';
+import Error from '../Error/Error';
 import {
   PhonebookContainer,
   PhonebookTitle,
@@ -12,7 +13,7 @@ import {
 import SlideTitle from '../../transition/popText.transition';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Phonebook = ({ getAllContacts }) => {
+const Phonebook = ({ getAllContacts, error }) => {
   const [showTitle, setShowTitle] = useState(false);
 
   useEffect(() => {
@@ -22,21 +23,32 @@ const Phonebook = ({ getAllContacts }) => {
   }, [getAllContacts]);
 
   return (
-    <PhonebookContainer>
-      <SlideTitle in={showTitle}>
-        <PhonebookTitle>Phonebook</PhonebookTitle>
-      </SlideTitle>
-      <ContactForm />
-      <PhonebookSubTitle>Contacts</PhonebookSubTitle>
-      <ContactFilter />
-      <ContactList />
-      <Notification autoClose={1500} />
-    </PhonebookContainer>
+    <>
+      {error ? (
+        <Error />
+      ) : (
+        <PhonebookContainer>
+          <SlideTitle in={showTitle}>
+            <PhonebookTitle>Phonebook</PhonebookTitle>
+          </SlideTitle>
+          <ContactForm />
+          <PhonebookSubTitle>Contacts</PhonebookSubTitle>
+          <ContactFilter />
+          <ContactList />
+          <Notification autoClose={1500} />
+        </PhonebookContainer>
+      )}
+    </>
   );
 };
 
 Phonebook.propTypes = {
   getAllContacts: PropTypes.func.isRequired,
+  error: PropTypes.shape({}),
+};
+
+Phonebook.defaultProps = {
+  error: null,
 };
 
 export default Phonebook;
