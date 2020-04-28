@@ -11,9 +11,10 @@ import {
   Notification,
 } from './Phonebook.styled';
 import SlideTitle from '../../transition/popText.transition';
+import PopFilter from '../../transition/pop.transition';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Phonebook = ({ getAllContacts, error }) => {
+const Phonebook = ({ contacts, getAllContacts, error }) => {
   const [showTitle, setShowTitle] = useState(false);
 
   useEffect(() => {
@@ -33,7 +34,9 @@ const Phonebook = ({ getAllContacts, error }) => {
           </SlideTitle>
           <ContactForm />
           <PhonebookSubTitle>Contacts</PhonebookSubTitle>
-          <ContactFilter />
+          <PopFilter in={contacts.length >= 2}>
+            <ContactFilter />
+          </PopFilter>
           <ContactList />
           <Notification autoClose={1500} />
         </PhonebookContainer>
@@ -43,8 +46,9 @@ const Phonebook = ({ getAllContacts, error }) => {
 };
 
 Phonebook.propTypes = {
+  contacts: PropTypes.arrayOf(PropTypes.shape([]).isRequired).isRequired,
   getAllContacts: PropTypes.func.isRequired,
-  error: PropTypes.shape({}),
+  error: PropTypes.oneOfType([PropTypes.object]),
 };
 
 Phonebook.defaultProps = {

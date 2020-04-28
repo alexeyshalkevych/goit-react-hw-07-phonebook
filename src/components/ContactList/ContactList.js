@@ -10,9 +10,9 @@ const ContactList = ({ contacts, loader }) => {
   return (
     <>
       <TransitionGroup component={List}>
-        {contacts.map(item => (
-          <Slide key={item.id}>
-            <Contact item={item} />
+        {contacts.map(contact => (
+          <Slide key={contact.id}>
+            <Contact contact={contact} />
           </Slide>
         ))}
       </TransitionGroup>

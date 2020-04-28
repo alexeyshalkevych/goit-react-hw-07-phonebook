@@ -1,5 +1,3 @@
-import { toast } from 'react-toastify';
-
 /**
  * find data contact
  */
@@ -20,23 +18,8 @@ const convertItemAfterAddingToDataBase = ({ config, data }) => ({
   ...JSON.parse(config.data),
 });
 
-/**
- * check for availability data in state
- */
-const hasStateContact = (state, contact) => {
-  const stateContact = findContact(state, contact);
-
-  if (stateContact) {
-    toast.error(`${contact.name} is already in contacts.`);
-    return true;
-  }
-
-  return false;
-};
-
 export {
   findContact,
-  hasStateContact,
   convertDataFromDataBase,
   convertItemAfterAddingToDataBase,
 };

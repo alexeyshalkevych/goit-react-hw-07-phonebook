@@ -38,7 +38,6 @@ const ContactForm = ({ addContact }) => {
               name="name"
               value={values.name}
               onChange={handleChange}
-              autoComplete="off"
             />
             <ErrorMessage name="name" component={ErrorInput} />
           </Label>
@@ -50,7 +49,6 @@ const ContactForm = ({ addContact }) => {
               name="number"
               value={values.number === 0 ? '' : values.number}
               onChange={handleChange}
-              autoComplete="off"
             />
             <ErrorMessage name="number" component={ErrorInput} />
           </Label>

@@ -1,8 +1,8 @@
 // import { v4 as uuidv4 } from 'uuid';
 import {
-  GET_CONTACTS_SUCCESS,
-  GET_CONTACTS_REQUEST,
-  GET_CONTACTS_ERROR,
+  FETCH_CONTACTS_SUCCESS,
+  FETCH_CONTACTS_REQUEST,
+  FETCH_CONTACTS_ERROR,
   ADD_CONTACT_SUCCESS,
   ADD_CONTACT_REQUEST,
   ADD_CONTACT_ERROR,
@@ -14,13 +14,13 @@ import {
 /**
  * GET
  */
-export const getContactsRequest = () => ({ type: GET_CONTACTS_REQUEST });
+export const getContactsRequest = () => ({ type: FETCH_CONTACTS_REQUEST });
 export const getContactsSuccess = contacts => ({
-  type: GET_CONTACTS_SUCCESS,
+  type: FETCH_CONTACTS_SUCCESS,
   payload: contacts,
 });
 export const getContactsError = error => ({
-  type: GET_CONTACTS_ERROR,
+  type: FETCH_CONTACTS_ERROR,
   payload: error,
 });
 

@@ -1,5 +1,6 @@
 import { call, put, all, takeLatest, take } from 'redux-saga/effects';
 import { eventChannel } from 'redux-saga';
+import { toast } from 'react-toastify';
 import {
   getContactsRequest,
   getContactsSuccess,
@@ -12,7 +13,7 @@ import {
   deleteContactError,
 } from './contactsActions';
 
-import { GET_CONTACTS, ADD_CONTACT, DELETE_CONTACT } from '../actionTypes';
+import { FETCH_CONTACTS, ADD_CONTACT, DELETE_CONTACT } from '../actionTypes';
 import { convertDataFromDataBase } from '../../utils/helpers';
 import checkedContactInDataBase from '../../utils/firebaseHelpers';
 import db from '../../firebase_config';
@@ -55,7 +56,7 @@ function* addContactWorker({ contact }) {
     const isContact = yield call(checkedContactInDataBase, contact);
 
     if (isContact) {
-      yield put(addContactSuccess(contact));
+      yield call(toast.error, `${contact.name} is already in contacts.`);
       return;
     }
 
@@ -79,7 +80,7 @@ function* deleteContactWorker({ id }) {
 }
 
 function* getContactsWatcher() {
-  yield takeLatest(GET_CONTACTS, getContactsWorker);
+  yield takeLatest(FETCH_CONTACTS, getContactsWorker);
 }
 
 function* addContactWatcher() {

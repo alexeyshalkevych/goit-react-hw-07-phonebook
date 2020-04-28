@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import {
   getContactsRequest,
   getContactsSuccess,
@@ -47,7 +48,7 @@ export const addContact = contact => async dispatch => {
     const isContact = await checkedContactInDataBase(contact);
 
     if (isContact) {
-      dispatch(addContactSuccess(contact));
+      toast.error(`${contact.name} is already in contacts.`);
       return;
     }
 

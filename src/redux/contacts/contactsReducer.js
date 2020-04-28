@@ -1,21 +1,16 @@
 import {
-  GET_CONTACTS_SUCCESS,
+  FETCH_CONTACTS_SUCCESS,
   ADD_CONTACT_SUCCESS,
   DELETE_CONTACT_SUCCESS,
 } from '../actionTypes';
-import { hasStateContact } from '../../utils/helpers';
 
 const contactReducer = (state = [], { type, payload }) => {
   switch (type) {
-    case GET_CONTACTS_SUCCESS: {
+    case FETCH_CONTACTS_SUCCESS: {
       return [...state, ...payload];
     }
 
     case ADD_CONTACT_SUCCESS: {
-      if (hasStateContact(state, payload)) {
-        return state;
-      }
-
       return [...state, payload];
     }
 
