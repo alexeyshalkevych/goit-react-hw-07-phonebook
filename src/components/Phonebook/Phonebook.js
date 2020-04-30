@@ -10,8 +10,8 @@ import {
   PhonebookSubTitle,
   Notification,
 } from './Phonebook.styled';
-import SlideTitle from '../../transition/popText.transition';
-import PopFilter from '../../transition/pop.transition';
+import SlideTitle from '../../theme/transition/popText.transition';
+import PopFilter from '../../theme/transition/pop.transition';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Phonebook = ({ contacts, getAllContacts, error }) => {

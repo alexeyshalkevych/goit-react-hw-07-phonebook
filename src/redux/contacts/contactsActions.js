@@ -11,9 +11,6 @@ import {
   DELETE_CONTACT_ERROR,
 } from '../actionTypes';
 
-/**
- * GET
- */
 export const getContactsRequest = () => ({ type: FETCH_CONTACTS_REQUEST });
 export const getContactsSuccess = contacts => ({
   type: FETCH_CONTACTS_SUCCESS,
@@ -24,9 +21,6 @@ export const getContactsError = error => ({
   payload: error,
 });
 
-/**
- * POST
- */
 export const addContactRequest = () => ({ type: ADD_CONTACT_REQUEST });
 export const addContactSuccess = contact => ({
   type: ADD_CONTACT_SUCCESS,
@@ -37,9 +31,6 @@ export const addContactError = error => ({
   payload: error,
 });
 
-/**
- * DELETE
- */
 export const deleteContactRequest = () => ({ type: DELETE_CONTACT_REQUEST });
 export const deleteContactSuccess = id => ({
   type: DELETE_CONTACT_SUCCESS,

@@ -16,7 +16,7 @@ import {
 import { FETCH_CONTACTS, ADD_CONTACT, DELETE_CONTACT } from '../actionTypes';
 import { convertDataFromDataBase } from '../../utils/helpers';
 import checkedContactInDataBase from '../../utils/firebaseHelpers';
-import db from '../../firebase_config';
+import db from '../../configs/firebase_config';
 
 const createEventChannel = () => {
   const listener = eventChannel(emit => {

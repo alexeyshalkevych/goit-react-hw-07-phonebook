@@ -15,7 +15,7 @@ import {
   getContactsFromDataBase,
   addContactToDataBase,
   deleteContactFromDataBase,
-} from '../../services/contactsApi';
+} from '../../api/contactsApi';
 
 import {
   convertDataFromDataBase,
@@ -23,9 +23,6 @@ import {
 } from '../../utils/helpers';
 import checkedContactInDataBase from '../../utils/firebaseHelpers';
 
-/**
- * GET CONTACTS
- */
 export const getAllContacts = () => async dispatch => {
   dispatch(getContactsRequest());
 
@@ -38,9 +35,6 @@ export const getAllContacts = () => async dispatch => {
   }
 };
 
-/**
- * ADD CONTACT
- */
 export const addContact = contact => async dispatch => {
   dispatch(addContactRequest());
 
@@ -60,9 +54,6 @@ export const addContact = contact => async dispatch => {
   }
 };
 
-/**
- * DELETE CONTACT
- */
 export const deleteContact = id => async dispatch => {
   dispatch(deleteContactRequest());
 

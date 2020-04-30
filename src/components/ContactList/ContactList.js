@@ -4,7 +4,7 @@ import { TransitionGroup } from 'react-transition-group';
 import Loader from '../Loader/Loader';
 import Contact from '../Containers/ContactContainer';
 import { List } from './ContactList.styled';
-import Slide from '../../transition/slide.transition';
+import Slide from '../../theme/transition/slide.transition';
 
 const ContactList = ({ contacts, loader }) => {
   return (

@@ -1,4 +1,4 @@
-import db from '../firebase_config';
+import db from '../configs/firebase_config';
 
 /**
  * check if exists item in firebase database
