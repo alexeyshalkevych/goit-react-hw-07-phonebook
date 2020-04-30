@@ -8,7 +8,7 @@ import {
   FETCH_CONTACTS_ERROR,
   ADD_CONTACT_ERROR,
   DELETE_CONTACT_ERROR,
-} from '../actionTypes';
+} from '../../Constants/actionNames';
 
 const loaderReducer = (state = false, action) => {
   switch (action.type) {

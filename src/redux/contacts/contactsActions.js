@@ -9,7 +9,7 @@ import {
   DELETE_CONTACT_REQUEST,
   DELETE_CONTACT_SUCCESS,
   DELETE_CONTACT_ERROR,
-} from '../actionTypes';
+} from '../../Constants/actionNames';
 
 export const getContactsRequest = () => ({ type: FETCH_CONTACTS_REQUEST });
 export const getContactsSuccess = contacts => ({

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Phonebook from '../Phonebook/Phonebook';
 import { getContacts } from '../../redux/contacts/contactsSelectors';
 import getError from '../../redux/error/errorSelectors';
-import { FETCH_CONTACTS } from '../../redux/actionTypes';
+import { FETCH_CONTACTS } from '../../Constants/actionNames';
 
 const mapStateToProps = state => ({
   contacts: getContacts(state),

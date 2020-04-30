@@ -13,7 +13,11 @@ import {
   deleteContactError,
 } from './contactsActions';
 
-import { FETCH_CONTACTS, ADD_CONTACT, DELETE_CONTACT } from '../actionTypes';
+import {
+  FETCH_CONTACTS,
+  ADD_CONTACT,
+  DELETE_CONTACT,
+} from '../../Constants/actionNames';
 import { convertDataFromDataBase } from '../../utils/helpers';
 import checkedContactInDataBase from '../../utils/firebaseHelpers';
 import db from '../../configs/firebase_config';

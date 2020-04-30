@@ -1,4 +1,4 @@
-import { CHANGE_FILTER } from '../actionTypes';
+import { CHANGE_FILTER } from '../../Constants/actionNames';
 
 const changeFilter = value => ({
   type: CHANGE_FILTER,

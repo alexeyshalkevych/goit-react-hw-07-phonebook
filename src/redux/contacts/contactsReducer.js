@@ -2,7 +2,7 @@ import {
   FETCH_CONTACTS_SUCCESS,
   ADD_CONTACT_SUCCESS,
   DELETE_CONTACT_SUCCESS,
-} from '../actionTypes';
+} from '../../Constants/actionNames';
 
 const contactReducer = (state = [], { type, payload }) => {
   switch (type) {

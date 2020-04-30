@@ -5,7 +5,7 @@ import {
   FETCH_CONTACTS_ERROR,
   ADD_CONTACT_ERROR,
   DELETE_CONTACT_ERROR,
-} from '../actionTypes';
+} from '../../Constants/actionNames';
 
 const errorReducer = (state = null, { type, payload }) => {
   switch (type) {
